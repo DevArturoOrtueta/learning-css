@@ -1,0 +1,25 @@
+.pulser{
+    width: 50px;
+    height: 50px;
+    background: #09f;
+    border-radius: 100%;
+    position: relative;
+    transition-duration: .5s; 
+    /* Se pone el transition en el estado inicial (este) para que cuando salga del hover, vuelva a su estado inicial en transicion */
+    transition-property: background, scale;
+    /* Con esta propiedad decimos que queremos animar, por default esta en all */
+    /* Si ponemos background, scale vamos a ver que se anima el background y scale pero el box-shadow se ejecuta de una vez, y se pierde al salir del hover */
+}
+
+.pulser:hover{
+    scale: 2;
+    background: purple;
+    box-shadow: 0 0 10px purple;
+}
+
+
+body{
+    display: grid;
+    place-content: center;
+    min-height: 50vh;
+}
