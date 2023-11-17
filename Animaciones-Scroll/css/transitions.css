@@ -11,19 +11,41 @@
     /* Si ponemos background, scale vamos a ver que se anima el background y scale pero el box-shadow se ejecuta de una vez, y se pierde al salir del hover */
     transition-timing-function: ease;
     /* Este es el tiempo explosivo de la animacion, por default es linear */
-    transition-delay: 1s;
+    /* transition-delay: 1s; */
     /* Con esto podemos colocar un delay antes de que inicie una animacion. */
+    opacity: 0;
 }
 
-.pulser:hover{
+section {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+     align-items: center;
+}
+section:hover .pulser {
+    opacity: 1;
+}
+
+/* .pulser:hover{
     scale: 2;
     background: purple;
     box-shadow: 0 0 10px purple;
-}
+} */
 
 
 body{
     display: grid;
     place-content: center;
     min-height: 50vh;
+}
+
+.pulser:first-child{
+    transition-delay: 0s;
+}
+.pulser:nth-child(2){
+    transition-delay: 300ms;
+}
+
+.pulser:nth-child(3){
+    transition-delay: 600ms;
 }
