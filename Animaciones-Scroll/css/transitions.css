@@ -4,11 +4,15 @@
     background: #09f;
     border-radius: 100%;
     position: relative;
-    transition-duration: .5s; 
+    transition-duration: 1s; 
     /* Se pone el transition en el estado inicial (este) para que cuando salga del hover, vuelva a su estado inicial en transicion */
-    transition-property: background, scale;
+    transition-property: all;
     /* Con esta propiedad decimos que queremos animar, por default esta en all */
     /* Si ponemos background, scale vamos a ver que se anima el background y scale pero el box-shadow se ejecuta de una vez, y se pierde al salir del hover */
+    transition-timing-function: ease;
+    /* Este es el tiempo explosivo de la animacion, por default es linear */
+    transition-delay: 1s;
+    /* Con esto podemos colocar un delay antes de que inicie una animacion. */
 }
 
 .pulser:hover{
