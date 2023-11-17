@@ -13,9 +13,9 @@
     /* Este es el tiempo explosivo de la animacion, por default es linear */
     /* transition-delay: 1s; */
     /* Con esto podemos colocar un delay antes de que inicie una animacion. */
-    opacity: 0;
+    /* opacity: 0;  esto si usamos el section*/
 }
-
+/* 
 section {
     display: flex;
     gap: 16px;
@@ -24,13 +24,13 @@ section {
 }
 section:hover .pulser {
     opacity: 1;
-}
+} */
 
-/* .pulser:hover{
+.pulser:hover{
     scale: 2;
     background: purple;
     box-shadow: 0 0 10px purple;
-} */
+}
 
 
 body{
@@ -39,7 +39,7 @@ body{
     min-height: 50vh;
 }
 
-.pulser:first-child{
+/* .pulser:first-child{
     transition-delay: 0s;
 }
 .pulser:nth-child(2){
@@ -48,4 +48,4 @@ body{
 
 .pulser:nth-child(3){
     transition-delay: 600ms;
-}
+} */
