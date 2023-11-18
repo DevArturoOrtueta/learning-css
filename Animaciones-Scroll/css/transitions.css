@@ -4,6 +4,8 @@
     background: #09f;
     border-radius: 100%;
     position: relative;
+    /* animation: move;
+    animation-duration: 3s; */
     /* transition-duration: 1s;  */
     /* Se pone el transition en el estado inicial (este) para que cuando salga del hover, vuelva a su estado inicial en transicion */
     /* transition-property: all; */
@@ -15,7 +17,7 @@
     /* Con esto podemos colocar un delay antes de que inicie una animacion. */
     /* opacity: 0;  esto si usamos el section*/
     /* shorthand  */
-    transition: background 300ms linear, scale 500ms ease-in-out, box-shadow 700ms ease-out;
+    /* transition: background 300ms linear, scale 500ms ease-in-out, box-shadow 700ms ease-out; */
     /* el shorthand permite con coma, separar cada propiedad para darle transiciones. */
 }
 /* 
@@ -29,19 +31,19 @@ section:hover .pulser {
     opacity: 1;
 } */
 
-.pulser:hover{
+/* .pulser:hover{
     scale: 2;
     background: purple;
     box-shadow: 0 0 10px purple;
     transition-duration: 500ms;
-    /* Esto hara que inicialmente la animacion vaya a 1s y de retorno utilice el del .pulser */
-}
-
+    /* Esto hara que inicialmente la animacion vaya a 1s y de retorno utilice el del .pulser 
+} */
+/* 
 @media(prefers-reduced-motion: reduce){
     .pulser {
         transition: none;
     }
-}
+} */
 
 
 body{
@@ -60,3 +62,44 @@ body{
 .pulser:nth-child(3){
     transition-delay: 600ms;
 } */
+
+.pulser::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #09f;
+    border-radius: 100%;
+    z-index: -1;
+    animation-name: pulse;
+    animation-duration: 1.5s;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    50%{
+        scale: 1.6;
+        opacity: .4;
+    }
+
+    100% {
+        opacity: .6;
+    }
+
+}
+
+@keyframes move {
+    from{
+        transform: translateY(0px);
+    }
+    to{
+        transform: translateY(100px);
+    }   
+}
