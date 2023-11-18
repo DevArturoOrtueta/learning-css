@@ -33,8 +33,14 @@ section:hover .pulser {
     scale: 2;
     background: purple;
     box-shadow: 0 0 10px purple;
-    transition-duration: 1s;
+    transition-duration: 500ms;
     /* Esto hara que inicialmente la animacion vaya a 1s y de retorno utilice el del .pulser */
+}
+
+@media(prefers-reduced-motion: reduce){
+    .pulser {
+        transition: none;
+    }
 }
 
 
