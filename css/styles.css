@@ -1,0 +1,49 @@
+body{
+    background: rgb(128, 218, 203);
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p,a {
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+}
+a{
+    font-size: 24px;
+}
+#progress{
+    position: fixed;
+    top: 0;
+    width: 0%;
+    background: red;
+    height: 1em; 
+
+    animation: progress-grow auto linear;
+    animation-timeline: scroll(root block);
+ }
+
+ .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 1em;
+    margin: 3rem;
+    gap: 5px;
+    border-radius: 16px;
+ }
+
+ hr{
+    width: 95%;
+ }
+ 
+ @keyframes progress-grow {
+     from {
+       width: 0%;
+     }
+     to{
+       width: 100%;
+     }
+ }
+
